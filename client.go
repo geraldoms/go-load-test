@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	reqs := 300				// Total of requests for the load test
+	reqs := 300			// Total of requests for the load test
 	start := time.Now()		// Get the current time for 
 	ch := make(chan string, reqs)	// Channel to get info from the goroutines
 	counter := 0			// error counter
