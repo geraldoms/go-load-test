@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	reqs := 300			// Total of requests for the load test
-	start := time.Now()		// Get the current time for 
-	ch := make(chan string, reqs)	// Channel to get info from the goroutines
-	counter := 0			// error counter
+	reqs := 200                   // Total of requests for the load test
+	start := time.Now()           // Get the current time for
+	ch := make(chan string, reqs) // Channel to get info from the goroutines
+	counter := 0                  // error counter
 
 	// This loop creates a new goroutine for each request to the server.
 	// The func uses a counter (by reference) to get the errors and a channel to communicate
@@ -26,7 +26,7 @@ func main() {
 
 	// Shows the values of the tests
 	fmt.Printf("\n\nTotal of requests: [%d], time: [%.4f secs].\n", reqs, time.Since(start).Seconds())
-	fmt.Printf("Success: %d - Errors: %d\n", reqs - counter, counter)
+	fmt.Printf("Success: %d - Errors: %d\n", reqs-counter, counter)
 }
 
 // This func sends a get request to the server and write the results into the channel
